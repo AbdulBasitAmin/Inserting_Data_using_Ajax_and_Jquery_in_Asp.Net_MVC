@@ -1,0 +1,108 @@
+﻿@model Inserting_Data_using_Ajax.Models.tbl_questions
+
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<link href="~/Content/sty.css" rel="stylesheet" />
+
+
+
+<form action="" id="myForm" style="border:1px solid #ccc">
+    <div class="container">
+        <h1>Sign Up</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+
+        <label for="email"><b>Question Name</b></label>
+        @*<input type="text" placeholder="Enter Email" name="email" required>*@
+
+        @Html.TextBoxFor(x => x.q_name, new { @class = "form-control", @placeholder = "WRITE QUESTIONS" })
+
+        <label for="psw"><b>Option A </b></label>
+        @*<input type="password" placeholder="Enter Password" name="psw" required>*@
+
+        @Html.TextBoxFor(x => x.q_A, new { @class = "form-control" })
+        <label for="psw-repeat"><b>Option B </b></label>
+        @*<input type="password" placeholder="Repeat Password" name="psw-repeat" required>*@
+
+        @Html.TextBoxFor(x => x.q_B, new { @class = "form-control" })
+
+        <label for="psw-repeat"><b>Option C </b></label>
+        @Html.TextBoxFor(x => x.q_C, new { @class = "form-control" })
+
+
+        <label for="psw-repeat"><b>Option D </b></label>
+        @Html.TextBoxFor(x => x.q_D, new { @class = "form-control" })
+
+        <label for="psw-repeat"><b>Correct Option</b></label>
+        @Html.TextBoxFor(x => x.Correct_optn, new { @class = "form-control" })
+
+
+        <div class="row">
+
+            <input type="reset" value="Submit" class="btn btn-default" id="btnSubmit" />
+
+        </div>
+
+
+    </div>
+</form>
+
+
+<div id="loaderDiv" style="text-align:center">
+
+    <img src="~/Content/img/download (1).png" style="height:200px" width="200"  />
+
+</div>
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+
+        $("#btnSubmit").click(function () {
+
+
+            $("#loaderDiv").show();
+
+            var data = $("#myForm").serialize();
+
+
+            $.ajax({
+
+
+                type: "POST",
+                url: "/Home/Index",
+                data: data,
+                success: function (response) {
+
+                    $("#loaderDiv").hide();
+
+                    alert("Questions Successfully Inserted..!");
+
+
+                }
+
+
+            })
+
+
+        })
+
+
+    }
+        
+        
+        
+        )
+
+
+</script>
+
+

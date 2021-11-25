@@ -1,0 +1,20 @@
+create database ajax_testing
+
+use ajax_testing
+
+create table tbl_questions
+(
+q_id int primary key identity,
+q_name nvarchar(100) not null,
+
+q_A nvarchar(100) not null,
+q_B nvarchar(100) not null,
+q_C nvarchar(100) not null,
+
+q_D nvarchar(100) not null,
+
+Correct_optn nvarchar(100) not null,
+
+)
+
+select * from tbl_questions

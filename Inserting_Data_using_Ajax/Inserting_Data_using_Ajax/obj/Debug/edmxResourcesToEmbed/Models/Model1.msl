@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ajax_testingModelStoreContainer" CdmEntityContainer="ajax_testingEntities">
+    <EntitySetMapping Name="tbl_questions">
+      <EntityTypeMapping TypeName="ajax_testingModel.tbl_questions">
+        <MappingFragment StoreEntitySet="tbl_questions">
+          <ScalarProperty Name="q_id" ColumnName="q_id" />
+          <ScalarProperty Name="q_name" ColumnName="q_name" />
+          <ScalarProperty Name="q_A" ColumnName="q_A" />
+          <ScalarProperty Name="q_B" ColumnName="q_B" />
+          <ScalarProperty Name="q_C" ColumnName="q_C" />
+          <ScalarProperty Name="q_D" ColumnName="q_D" />
+          <ScalarProperty Name="Correct_optn" ColumnName="Correct_optn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
